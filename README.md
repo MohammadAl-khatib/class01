@@ -73,4 +73,13 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 This project is created by Mohammad AlKhatib, it deals with using React for:
 
-1. creating components.
+1. Creating components.
+2. Dealing with states and props.
+
+Number and name of feature: 1. display image
+Estimate of time needed to complete: 5 min
+Actual time needed to complete: 10 mins
+
+Number and name of feature: 2. Allow users to vote for their favorite beast
+Estimate of time needed to complete: 30 mins
+Actual time needed to complete: 30 mins
