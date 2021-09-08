@@ -6,6 +6,7 @@ import Footer from "./components/footer";
 import "bootstrap/dist/css/bootstrap.min.css";
 import data from "./components/data.json";
 import SelectedBeast from "./components/SelectedBeast";
+import Form from "./components/Form";
 
 class App extends Component {
   constructor(props) {
@@ -14,6 +15,7 @@ class App extends Component {
       showModal: false,
       img: "",
       description: "",
+      numberOfHorns: "All",
     };
   }
   handleClose = () => {
@@ -28,19 +30,31 @@ class App extends Component {
       description: description,
     });
   };
+  setNumberOfHorns = (numberOfHorns) => {
+    this.setState({
+      numberOfHorns: numberOfHorns,
+    });
+  };
 
   render() {
     return (
       <>
         <Header />
-        <Main data={data} handleOpen={this.handleOpen}/>
+        <Form
+          data={data.map((item) => item.horns)}
+          setNumberOfHorns={this.setNumberOfHorns}
+        />
+        <Main
+          data={data}
+          handleOpen={this.handleOpen}
+          numberOfHorns={this.state.numberOfHorns}
+        />
         <Footer />
-
-        <SelectedBeast 
-        showModal ={this.state.showModal}
-        handleClose={this.handleClose} 
-        src ={this.state.img} 
-        description = {this.state.description}
+        <SelectedBeast
+          showModal={this.state.showModal}
+          handleClose={this.handleClose}
+          src={this.state.img}
+          description={this.state.description}
         />
       </>
     );
