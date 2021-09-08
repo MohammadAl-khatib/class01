@@ -21,6 +21,7 @@ getHandleOpen=()=>{
     let url=this.props.url;
     let description=this.props.description;
     this.props.handleOpen(url,description);
+    this.likes();
 }
 
     render() {
